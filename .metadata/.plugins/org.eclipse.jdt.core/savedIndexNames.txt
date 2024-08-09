@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\DIO - Claro Programing\estudos\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+336175264.index
+2366647850.index

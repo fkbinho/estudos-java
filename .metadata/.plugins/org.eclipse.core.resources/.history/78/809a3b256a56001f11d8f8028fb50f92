@@ -16,7 +16,7 @@ public class Case2 {
 		int candidatosAtual = 0;
 		double salarioBase = 2000.0;
 		
-		while(candidatosSelecionados < 5 && candidatosAtual < candidatos.length) {
+		while(candidatosSelecionados < 5) {
 			String candidato = candidatos[candidatosAtual];
 			double salarioPretendido = valorPretendido();
 			

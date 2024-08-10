@@ -2,7 +2,6 @@ package candidatura;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Case2 {
@@ -34,10 +33,6 @@ public class Case2 {
 		}
 
 		imprimirSelecionados(candidatosSelecionados);
-		
-		for (String candidato : candidatosSelecionados) {
-			entrandoEmContato(candidato);
-		}
 	}
 
 	// solução para o case 3
@@ -62,22 +57,11 @@ public class Case2 {
 		
 		do {
 			atendeu = atender();
-			continuarTentando = !atendeu;
-			
-			if(continuarTentando) {
-				tentativasRealizadas++;
-			} else
-				System.out.println("CONTATO REALIZADO COM SUCESSO");
-		} while (continuarTentando && tentativasRealizadas < 3);
-		
-		if(atendeu)
-			System.out.println("CONSEGUIMOS CONTATO COM " + candidato + " NA " + tentativasRealizadas + " TENTATIVA.");
-		else
-			System.out.println("NÃO CONSEGUIMOS CONTATO COM " + candidato + ", NUMÉRO MÁXIMO DE TENTATIVA" + tentativasRealizadas + " TENTATIVA.");
+		}
 	}
 	
 	// método auxiliar
 	public static boolean atender() {
-		return new Random().nextInt(3) == 1;
+		return new random().nextInt(3) == 1;
 	}
 }

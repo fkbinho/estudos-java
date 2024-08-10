@@ -1,7 +1,5 @@
 package candidatura;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Case2 {
@@ -11,22 +9,25 @@ public class Case2 {
 		selecaoCandidatos();
 	}
 
-	public static void imprimirSelecionados(List <String> candidatosSelecionados) {
-		System.out.println("Lista de candidatos selecionados:");
-        for (String candidato : candidatosSelecionados) {
-            System.out.println(candidato);
-        }
+	public static void imprimirSelecionados() {
+		String[] candidatos = { "FELIPE", "MÁRCIA", "JULIA", "PAULO", "AUGUSTO", "MÔNICA", "FABRÍCIO", "MIRELA",
+				"DANIELA", "JORGE" };
+		System.out.println("Lista de candidatos informando o índice.");
+		
+		for(int i = 0; i < candidatos.length; i++) {
+			System.out.println("O candidato de nº " + (i + 1) + " é o " + candidatos[i]);
+		}
 	}
 
 	public static void selecaoCandidatos() {
 		String[] candidatos = { "FELIPE", "MÁRCIA", "JULIA", "PAULO", "AUGUSTO", "MÔNICA", "FABRÍCIO", "MIRELA",
 				"DANIELA", "JORGE" };
-		
-		List<String> candidatosSelecionados = new ArrayList<String>();
+
+		int candidatosSelecionados = 0;
 		int candidatosAtual = 0;
 		double salarioBase = 2000.0;
 
-		while (candidatosSelecionados.size() < 5 && candidatosAtual < candidatos.length) {
+		while (candidatosSelecionados < 5 && candidatosAtual < candidatos.length) {
 			String candidato = candidatos[candidatosAtual];
 			double salarioPretendido = valorPretendido();
 
@@ -34,12 +35,10 @@ public class Case2 {
 
 			if (salarioBase >= salarioPretendido) {
 				System.out.println("O candidato " + candidato + " foi selecionado para a vaga.");
-				candidatosSelecionados.add(candidato);
+				candidatosSelecionados++;
 			}
 			candidatosAtual++;
 		}
-		
-		imprimirSelecionados(candidatosSelecionados);
 	}
 
 	// método que simula o valor pretendido

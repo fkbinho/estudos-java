@@ -38,8 +38,6 @@ public class Case2 {
 			}
 			candidatosAtual++;
 		}
-		
-		imprimirSelecionados(candidatosSelecionados);
 	}
 
 	// método que simula o valor pretendido
